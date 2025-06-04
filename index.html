@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbal Fitness Water - Natural Weight Loss Solution</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7f0 100%); /* Changed to white gradient */
+            color: #2E5A27; /* Changed to olive green text */
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px; /* Increased particle size */
+            height: 4px; /* Increased particle size */
+            background: linear-gradient(45deg, #2E5A27, #4CAF50); /* Olive green to green */
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        .particle-small {
+            position: absolute;
+            width: 2px; /* Smaller particle size */
+            height: 2px; /* Smaller particle size */
+            background: linear-gradient(45deg, #2E5A27, #4CAF50); /* Olive green to green */
+            border-radius: 50%;
+            animation: float 15s infinite linear; /* Same animation */
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95); /* Changed to white with transparency */
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(46, 90, 39, 0.1); /* Olive green border */
+            padding: 1rem 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center; /* Centered content */
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo img {
+            height: 150px; /* Increased logo height further */
+            width: auto;
+            border-radius: 15%; /* Added rounded corners */
+            
+            transition: all 0.3s ease;
+        }
+
+        .logo img:hover {
+            
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #2E5A27; /* Changed to olive green */
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #4CAF50; /* Changed to green */
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #2E5A27, #4CAF50); /* Olive green to green */
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #2E5A27, #4CAF50); /* Olive green to green */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textGlow 3s ease-in-out infinite alternate; /* Keep text glow animation */
+        }
+
+        @keyframes textGlow {
+            0% {
+                filter: brightness(1);
+                text-shadow: 0 0 20px rgba(76, 175, 80, 0.5); /* Adjusted text shadow color */
+            }
+            100% {
+                filter: brightness(1.2);
+                text-shadow: 0 0 30px rgba(46, 125, 50, 0.8); /* Adjusted text shadow color */
+            }
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #2E5A27; /* Changed to olive green */
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 2rem 4rem; /* Increased padding further */
+            background: linear-gradient(45deg, #2E5A27, #4CAF50); /* Olive green to green */
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem; /* Increased font size */
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(46, 90, 39, 0.3); /* Olive green shadow */
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent); /* Keep glare effect */
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #2E5A27, #4CAF50); /* Olive green to green */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Cards Grid (used for Benefits) */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax for card size */
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9); /* White background */
+            backdrop-filter: blur(10px); /* Adjusted blur effect */
+            border: 1px solid rgba(46, 90, 39, 0.2); /* Olive green border */
+            border-radius: 20px; /* Adjusted border radius */
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02); /* Adjusted hover effect */
+            box-shadow: 0 20px 40px rgba(46, 90, 39, 0.2); /* Olive green shadow */
+            border-color: rgba(46, 90, 39, 0.5); /* Olive green border */
+        }
+
+        /* Icon style (used for Benefit icons) */
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #2E5A27, #4CAF50); /* Olive green to green */
+            border-radius: 15px; /* Adjusted border radius */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2E5A27; /* Changed to olive green */
+        }
+
+         .card p {
+            color: #2E5A27; /* Changed to olive green */
+         }
+
+        /* Testimonials (used for Success Stories) */
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.9); /* White background */
+            backdrop-filter: blur(10px); /* Adjusted blur effect */
+            border: 1px solid rgba(46, 90, 39, 0.2); /* Olive green border */
+            border-radius: 20px; /* Adjusted border radius */
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px); /* Keep hover effect */
+            box-shadow: 0 15px 30px rgba(46, 90, 39, 0.2); /* Olive green shadow */
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #2E5A27; /* Changed to olive green */
+        }
+
+        .testimonial-author {
+            color: #4CAF50; /* Changed to green */
+            font-weight: 600;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: rgba(255, 255, 255, 0.9); /* White background */
+            backdrop-filter: blur(10px); /* Adjusted blur effect */
+            border: 1px solid rgba(46, 90, 39, 0.2); /* Olive green border */
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-question h4 {
+            margin-bottom: 0.5rem;
+            color: #2E5A27; /* Changed to olive green */
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .faq-answer p {
+            color: #2E5A27; /* Changed to olive green */
+        }
+
+
+        /* Contact Form (if needed, keeping the style for now) */
+        .contact-form {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            background: rgba(255, 255, 255, 0.9); /* White background */
+            backdrop-filter: blur(10px); /* Adjusted blur effect */
+            border: 1px solid rgba(46, 90, 39, 0.2); /* Olive green border */
+            border-radius: 20px; /* Adjusted border radius */
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2E5A27; /* Changed to olive green */
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.9); /* White background */
+            border: 1px solid rgba(46, 90, 39, 0.2); /* Olive green border */
+            border-radius: 10px;
+            color: #2E5A27; /* Changed to olive green */
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4CAF50; /* Changed to green */
+            box-shadow: 0 0 20px rgba(76, 175, 80, 0.3); /* Green shadow */
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7f0 100%); /* White to light green */
+            padding: 3rem 0 1rem;
+            border-top: 1px solid rgba(46, 90, 39, 0.1); /* Olive green border */
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            justify-items: center;
+        }
+
+        .footer-section h4 {
+            color: #2E5A27; /* Changed to olive green */
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Aligning contact info to the left in the footer */
+        .contact-info-footer {
+            text-align: left;
+        }
+
+        .contact-paragraph {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 50px; /* Increased size */
+            height: 50px; /* Increased size */
+            background: linear-gradient(45deg, #2E5A27, #4CAF50); /* Olive green to green */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px) scale(1.1); /* Keep hover effect */
+            box-shadow: 0 10px 20px rgba(46, 90, 39, 0.3); /* Olive green shadow */
+        }
+
+        .social-links a i {
+            font-size: 1.8rem; /* Increased icon size */
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .logo img {
+                height: 80px; /* Adjusted responsive logo height for smaller screens */
+            }
+            
+            .cards-grid,
+            .testimonials-container,
+            .faq-section .container > div { /* Added FAQ selector */
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Bottom Logo Section */
+        .bottom-logo-container {
+            position: relative;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .bottom-logo-image {
+            display: block;
+            max-width: 200px; /* Adjust size as needed */
+            height: auto;
+            margin: 0 auto;
+            transition: opacity 0.3s ease;
+             border-radius: 15%; /* Added rounded corners */
+        }
+
+        .bottom-logo-container:hover .bottom-logo-image {
+            opacity: 0.5;
+        }
+
+        .bottom-logo-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #2E5A27; /* Changed to olive green */
+            font-size: 1.5rem;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none; /* Allows clicking through text to image */
+        }
+
+        .bottom-logo-container:hover .bottom-logo-text {
+            opacity: 1;
+        }
+
+        /* Side Navigation Buttons */
+        .side-nav {
+            position: fixed;
+            top: 50%;
+            right: 20px; /* Distance from the right edge */
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Space between buttons */
+            z-index: 999; /* Ensure it's above other content */
+        }
+
+        .nav-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px; /* Circular button size */
+            height: 60px; /* Circular button size */
+            border-radius: 50%; /* Make it circular */
+            background: linear-gradient(45deg, #2E5A27, #4CAF50); /* Olive green to green gradient */
+            color: white; /* White text/icon color */
+            text-decoration: none;
+            font-size: 1rem; /* Increased font size */
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden; /* Hide overflowing text initially */
+            position: relative;
+            text-align: center; /* Center text */
+            padding: 5px; /* Add some padding */
+        }
+
+         .nav-button:hover {
+            transform: scale(1.1); /* Slightly enlarge on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            width: auto; /* Expand width on hover */
+            padding: 5px 15px; /* Add padding for text on hover */
+            border-radius: 30px; /* Make it pill-shaped on hover */
+         }
+
+         @media (max-width: 768px) {
+            .side-nav {
+                right: 10px;
+                gap: 5px;
+            }
+
+            .nav-button {
+                 width: 50px;
+                 height: 50px;
+                 font-size: 0.9rem; /* Increased font size for smaller screens */
+            }
+             .nav-button:hover {
+                 padding: 5px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home"><img id="logoImg" src="/logo.png" alt="Herbal Fitness Water Logo"></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Side Navigation Buttons -->
+    <div class="side-nav">
+        <a href="#home" class="nav-button home-button">Home</a>
+        <a href="#about" class="nav-button about-button">About</a>
+        <a href="#success-stories" class="nav-button stories-button">Stories</a>
+        <a href="#nutrition" class="nav-button nutrition-button">Nutrition</a>
+        <a href="#health-benefits" class="nav-button benefits-button">Benefits</a>
+        <a href="#faq" class="nav-button faq-button">FAQ</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Transform Your Life with Dr Sarwat's Herbal Fitness Water</h1>
+            <p>Discover the natural path to sustainable weight loss with our German herbal formulation.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About the Herbal Fitness Program</h2>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: black;">
+                <p>
+                    The Herbal Fitness Program offers a revolutionary approach to weight loss using a natural German herbal formulation. Our program is designed for sustainable results without restrictive dieting or pharmaceuticals.
+                </p>
+                <br>
+                <p>
+                    Learn about the phases of the program, the unique benefits of our herbal water, and how it works synergistically with your body to promote healthy and lasting weight loss.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section (using Cards Grid) -->
+    <section id="why-choose" class="section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Herbal Fitness Water?</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🌿</div>
+                    <h3>100% Natural Herbal Formulation</h3>
+                    <p>Pure, natural ingredients for safe and effective weight management.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚖️</div>
+                    <h3>Lose Up to 1 Pound Daily</h3>
+                    <p>Consistent, sustainable weight loss without extreme measures.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🍽️</div>
+                    <h3>No Restrictive Dieting</h3>
+                    <p>The More You Eat, The More You Reduce - enjoy satisfying meals.</p>
+                </div>
+                 <div class="card">
+                    <div class="card-icon">💊</div>
+                    <h3>No Pharmaceuticals</h3>
+                    <p>Free from synthetic compounds and harmful chemicals.</p>
+                </div>
+                 <div class="card">
+                    <div class="card-icon">🌎</div>
+                    <h3>Proven Success Since 1997</h3>
+                    <p>Internationally recognized and trusted weight loss solution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section (using Testimonials) -->
+    <section id="success-stories" class="section">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <p class="testimonial-text">"I was skeptical at first, but Herbal Fitness Water helped me lose 15 pounds in just two weeks! It was easy to incorporate into my routine and I felt great."
+                    </p>
+                    <p class="testimonial-author">— Sarah K.</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"This program changed my life. I've struggled with my weight for years, but with Herbal Fitness Water, I finally achieved my goal weight and have kept it off."
+                    </p>
+                    <p class="testimonial-author">— John P.</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"I love that it's all natural. I feel healthier and more energetic, and the weight is coming off steadily without feeling deprived."
+                    </p>
+                    <p class="testimonial-author">— Emily R.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutrition Guidance Section -->
+    <section id="nutrition" class="section">
+        <div class="container">
+            <h2 class="section-title">Nutrition Guidance</h2>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: #2E5A27;">
+                <p>
+                    While the Herbal Fitness Program doesn't require restrictive dieting, we provide guidance on making healthy food choices to support your weight loss journey. Learn about recommended foods and sample meal plans.
+                </p>
+                </div>
+                 </div>
+    </section>
+
+    <!-- Health Benefits Section -->
+    <section id="health-benefits" class="section">
+        <div class="container">
+            <h2 class="section-title">Health Benefits</h2>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: #2E5A27;">
+                <p>
+                    Beyond weight loss, the natural herbal formulation in Herbal Fitness Water offers several health benefits, including improved metabolism, increased energy levels, and detoxification.
+                </p>
+                </div>
+                 </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Is Herbal Fitness Water safe?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our formulation uses 100% natural German herbs and is free from synthetic chemicals.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How soon can I expect results?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Many users report noticeable weight loss within the first week.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do I need to follow a strict diet?</h4>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, the program is designed to work without restrictive dieting. We provide guidance for healthy eating.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Start Your Weight Loss Journey Today</h2>
+            <p class="contact-paragraph" style="font-size: 1.1rem; margin-bottom: 2rem; color: black;">Join thousands of satisfied customers who have transformed their lives with Herbal Fitness Water.</p>
+            
+            <div style="text-align: center;">
+                <a href="whatsapp://send?phone=+923452225588" class="cta-button">Consult Dr Sarwat now</a> <!-- Changed text and link to WhatsApp -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Logo with Hover Effect -->
+    <section id="bottom-logo" class="section">
+        <div class="container bottom-logo-container">
+            <img src="/logo.png" alt="Herbal Fitness Water Logo" class="bottom-logo-image">
+            <div class="bottom-logo-text">HERBAL FITNESS WATER</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section contact-info-footer">
+                    <h4>Contact Info</h4>
+                    <p><a href="mailto:sarwatazeemkhi@gmail.com">info@yourherbalfitness.com</a></p> <!-- Updated contact email -->
+                    <p style="margin-top: 1rem; color: #4CAF50;"><strong>Natural Weight Loss Solution</strong></p>
+                    <p style="color: rgba(255,255,255,0.8);">Proven Success Since 1997</p>
+                </div>
+                 <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/18zxfy1xEn/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/fitnessnherbs?igsh=dnlzM2lnNWRsM2F3&utm_source=qr"><i class="fab fa-instagram"></i></a>
+                        <a href="whatsapp://send?phone=+923452225588"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:sarwatazeemkhi@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; margin-top: 2rem;">
+                <p>&copy; 2024 Herbal Fitness Water. All rights reserved.</p> <!-- Updated copyright -->
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to create animated particles (keeping as per template)
+        const bg = document.getElementById('bgAnimation');
+        if (bg) {
+            // Create normal size particles (around 70%)
+            for (let i = 0; i < 175; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                particle.style.animationDuration = `${10 + Math.random() * 10}s`;
+                particle.style.animationDelay = `${-Math.random() * 10}s`; // Add random delay
+                bg.appendChild(particle);
+            }
+            // Create smaller particles (around 30%)
+            for (let i = 0; i < 75; i++) {
+                 const particle = document.createElement('div');
+                 particle.classList.add('particle-small'); // Use the smaller class
+                 particle.style.left = `${Math.random() * 100}%`;
+                 particle.style.top = `${Math.random() * 100}vh`;
+                 particle.style.animationDuration = `${10 + Math.random() * 10}s`;
+                 particle.style.animationDelay = `${-Math.random() * 10}s`; // Add random delay
+                 bg.appendChild(particle);
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+         // Optional: Add a class to the nav on scroll for a different style
+        const nav = document.querySelector('nav');
+        if (nav) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+        }
+
+    </script>
+     <!-- Font Awesome for social icons (optional - link if needed) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</body>
+</html> 
